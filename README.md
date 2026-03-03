@@ -1,4 +1,5 @@
 E-Commerce Sales Data Analysis Using Power BI
+
 Tech Stack: Power BI, SQL, Excel, Data Modeling
 
 📖 Project Overview
@@ -25,29 +26,37 @@ Fact Table (Created using Data Transformation in Power BI)
 Customer ID, Promotion ID, Product ID
 Units Sold, Price Per Unit, Total Sales
 Discount Percentage, Discount Value, Net Sales, Profit
+
 🔗 Data Model Relationships
 One-to-Many Relationships Established:
 Customers → Fact Table (Customer ID)
 Products → Fact Table (Product ID)
 Promotions → Fact Table (Promotion ID)
+
 📈 Key Insights & Visualizations
+
 1️⃣ Top & Bottom 5 Products Analysis
 Top 5 Products (By Sales & Profit):
 ✅ Sony Bravia 55" TV, Apple MacBook Air, Samsung Galaxy S21, Apple iPhone 14, HP Pavilion Laptop.
 Bottom 5 Products (By Sales & Profit):
 ❌ Zara Casual Shirt, Dove Soap Pack, L'Oreal Shampoo, Colgate Toothpaste, Nivea Body Lotion.
+
 2️⃣ Sales Trend by Period
 Sales peaked in 2022, showing seasonal trends in Q4 (likely due to holiday shopping).
 A dip in sales was observed in Q1 of 2023, suggesting lower demand or reduced marketing efforts.
+
 3️⃣ Promotions & Discounts Analysis
 Clearance Sales & Festive Diwali promotions offered the highest average discount values, but some promotions led to low profitability.
 Promotions helped in increasing sales but impacted net profit negatively in some cases.
+
 4️⃣ Sales by City & Geographical Analysis
 Top-performing cities: Bhopal, Kanpur, Indore, Lucknow, and Patna.
 Cities with low sales require localized marketing efforts and better product availability.
+
 5️⃣ Profit vs. Net Sales Comparison
 Despite high net sales, profit margins varied significantly across product categories.
 Electronics had the highest sales, but categories like personal care and kitchenware had lower profitability.
+
 🔥 Key Suggestions to Improve Sales & Profitability
 📌 1. Optimize Promotions for Maximum Profitability
 ✅ Focus on targeted discounts rather than flat rate discounts on all products.
@@ -84,6 +93,7 @@ Download the Power BI .pbix file from the repository.
 Open the file in Power BI Desktop.
 Explore interactive dashboards by using different filters.
 🔍 SQL Queries Used in This Project
+
 1️⃣ Retrieve Total Sales, Profit, and Discount by Product
 SELECT 
     p.Product_Name, 
@@ -95,6 +105,7 @@ FROM FactTable f
 JOIN Products p ON f.Product_ID = p.Product_ID
 GROUP BY p.Product_Name
 ORDER BY Total_Sales DESC;
+
 2️⃣ Find the Top 5 Best-Selling Cities by Revenue
 SELECT 
     c.City, 
@@ -105,6 +116,7 @@ JOIN Customers c ON f.Customer_ID = c.Customer_ID
 GROUP BY c.City
 ORDER BY Total_Sales DESC
 LIMIT 5;
+
 3️⃣ Analyze the Impact of Promotions on Sales
 SELECT 
     pr.Promotion_Name, 
@@ -116,6 +128,7 @@ FROM FactTable f
 JOIN Promotions pr ON f.Promotion_ID = pr.Promotion_ID
 GROUP BY pr.Promotion_Name
 ORDER BY Total_Sales DESC;
+
 4️⃣ Get Monthly Sales Trend Over Time
 SELECT 
     DATE_FORMAT(f.Sale_Date, '%Y-%m') AS Sales_Month, 
@@ -124,6 +137,7 @@ SELECT
 FROM FactTable f
 GROUP BY Sales_Month
 ORDER BY Sales_Month;
+
 5️⃣ Identify High-Profit Product Categories
 SELECT 
     p.Category, 
