@@ -1,6 +1,5 @@
 # 🛒 E-Commerce Sales Data Analysis Using Power BI
 
-**Author:** Rahul Das Dasari  
 **Tech Stack:** Power BI, SQL, Excel, Data Modeling  
 
 ## 📖 Project Overview  
